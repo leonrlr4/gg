@@ -1,7 +1,5 @@
 package main
 
-import "fmt"
-
 // 多參數回傳 -----------------
 // func sap(x int, y int) (xpy int, xty int) {
 // 	return x + y, x * y
@@ -100,26 +98,31 @@ import "fmt"
 
 // 函數作為值、型別 -----------------
 // type typeName func(input1 inputType1 , input2 inputType2 [, ...]) (result1 resultType1 [, ...])
-type testInt func(int) bool
+// type testInt func(int) bool
 
-func isOdd(number int) bool {
-	return number%2 == 0
-}
+// func isOdd(number int) bool {
+// 	return number%2 != 0
+// }
 
-func isEven(number int) bool {
-	return number%2 != 0
-}
+// func isEven(number int) bool {
+// 	return number%2 == 0
+// }
 
-func filter(arr []int, f testInt) {
-	// var result = []int{}
-	result := []int{}
-	for _, v := range arr {
-		if f(v) {
-			result = append(result, v)
-		}
-	}
-}
+// func filter(arr []int, f testInt) []int {
+// 	result := []int{}
+// 	for _, v := range arr {
+// 		if f(v) {
+// 			result = append(result, v)
+// 		}
+// 	}
+// 	return result
+// }
 
-func main() {
-	fmt.Println(isEven(21))
-}
+// func main() {
+// 	slice := []int{1, 2, 3, 4, 5, 7}
+// 	fmt.Println("slice = ", slice)
+// 	odd := filter(slice, isOdd) // 韓式當做值來傳遞了
+// 	fmt.Println("Odd elements of slice are: ", odd)
+// 	even := filter(slice, isEven) // 函式當做值來傳遞了
+// 	fmt.Println("Even elements of slice are: ", even)
+// }
