@@ -1,5 +1,7 @@
 package main
 
+import "fmt"
+
 // 多參數回傳 -----------------
 // func sap(x int, y int) (xpy int, xty int) {
 // 	return x + y, x * y
@@ -69,7 +71,7 @@ package main
 // with defer
 // func ReadWrite() bool {
 // 	file.Open("file")
-// 	// 做一些工作
+// 	// 做一些事
 // 	if failureX {
 // 		file.Close()
 // 		return false
@@ -97,3 +99,27 @@ package main
 // }
 
 // 函數作為值、型別 -----------------
+// type typeName func(input1 inputType1 , input2 inputType2 [, ...]) (result1 resultType1 [, ...])
+type testInt func(int) bool
+
+func isOdd(number int) bool {
+	return number%2 == 0
+}
+
+func isEven(number int) bool {
+	return number%2 != 0
+}
+
+func filter(arr []int, f testInt) {
+	// var result = []int{}
+	result := []int{}
+	for _, v := range arr {
+		if f(v) {
+			result = append(result, v)
+		}
+	}
+}
+
+func main() {
+	fmt.Println(isEven(21))
+}
