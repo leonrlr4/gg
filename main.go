@@ -1,6 +1,6 @@
 package main
 
-// 多參數回傳 -----------------
+// 多參數回傳 -------------------------------------------------------------------
 // func sap(x int, y int) (xpy int, xty int) {
 // 	return x + y, x * y
 // }
@@ -14,7 +14,7 @@ package main
 // 	fmt.Println(xpy, xty)
 // }
 
-// 可變參數函數 -----------------
+// 可變參數函數 -------------------------------------------------------------
 // func sum(arg ...int) int {
 // 	total := 0
 // 	for _, num := range arg {
@@ -30,7 +30,7 @@ package main
 // 	fmt.Println(sum([]int{1, 2, 3, 4}...))
 // }
 
-// 傳值與傳指標 -----------------
+// 傳值與傳指標 ---------------------------------------------------------------------
 // -- 傳值
 // func addOne(a int) int {
 // 	a += 1
@@ -64,7 +64,7 @@ package main
 // 	fmt.Println("x after add one, x:", x)
 // }
 
-// defer -----------------
+// defer ------------------------------------
 // 用於確保函式調用在包圍函式結束時執行。這常用於資源清理，例如關閉檔案或釋放鎖。
 // with defer
 // func ReadWrite() bool {
@@ -96,7 +96,7 @@ package main
 // 	return true
 // }
 
-// 函數作為值、型別 -----------------
+// 函數作為值、型別 ----------------------------------------
 // type typeName func(input1 inputType1 , input2 inputType2 [, ...]) (result1 resultType1 [, ...])
 // type testInt func(int) bool
 
@@ -125,4 +125,28 @@ package main
 // 	fmt.Println("Odd elements of slice are: ", odd)
 // 	even := filter(slice, isEven) // 函式當做值來傳遞了
 // 	fmt.Println("Even elements of slice are: ", even)
+// // }
+
+// // 指针类型----------------------------------------------------
+// func main() {
+
+// 	// 基本数据类型的内存布局
+// 	var i int = 3
+// 	// 指向 i 的地址是 &i
+// 	fmt.Println("i 的地址=", &i)
+
+// 	// 下面的 var ptr *int = &i
+// 	// 1. ptr 是一个指针变量
+// 	// 2. ptr 的类型 *int
+// 	// 3. ptr 本身的值是 &i
+// 	var ptr *int = &i
+// 	fmt.Printf("ptr = %v\n", ptr)
+// 	// ptr 的地址
+// 	fmt.Printf("ptr 的地址=%v\n", &ptr)
+// 	fmt.Printf("ptr 指向的值=%v\n", *ptr)
+// 	// 输出结果
+// 	// i 的地址= 0xc00001a0f8
+// 	// ptr = 0xc00001a0f8
+// 	// ptr 的地址=0xc00000e030
+// 	// ptr 指向的值=3
 // }
