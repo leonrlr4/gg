@@ -150,3 +150,19 @@ package main
 // 	// ptr 的地址=0xc00000e030
 // 	// ptr 指向的值=3
 // }
+
+// func main() {
+// 	var a, b int = 1, 2
+// 	var e, f = 123, "hell0"
+// 	fmt.Printf("%T,%T,%T,%T\n", a, b, e, f)
+// }
+// // enum in go
+// func main() {
+// 	const (
+// 		a = iota
+// 		b
+// 		c
+// 	)
+
+// 	fmt.Println(a, b, c)
+// }
