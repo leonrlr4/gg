@@ -1,3 +1,8 @@
+package main
+
+import (
+	"fmt"
+)
 
 // 多參數回傳 -------------------------------------------------------------------
 // func sap(x int, y int) (xpy int, xty int) {
@@ -126,3 +131,42 @@
 // 	fmt.Println("Even elements of slice are: ", even)
 // }
 
+// struct ----------------------------------------
+
+type Person struct {
+	Name string
+	Age  int
+}
+
+func olderPerson(p1, p2 Person) (Person, int) {
+	if p1.Age > p2.Age {
+		return p1, p1.Age - p2.Age
+	}
+	return p2, p2.Age - p1.Age
+}
+
+func main() {
+	// 賦值初始化
+	var tom Person = Person{
+		Name: "Tom",
+		Age:  18,
+	}
+	// 兩個欄位都寫清楚的初始化
+	jack := Person{
+		Name: "Jack",
+		Age:  20,
+	}
+	// 按照 struct 定義順序初始化值
+	tina := Person{"tina", 21}
+	// 指標初始化
+	// var lisa *Person = &Person{
+	// 	Name: "Lisa",
+	// 	Age:  19,
+	// }
+
+	tj, difftj := olderPerson(tom, jack)
+	jt, diffjt := olderPerson(jack, tina)
+
+	fmt.Printf("%v is older %v years\n", tj.Name, difftj)
+	fmt.Printf("%v is older %v years\n", jt.Name, diffjt)
+}
