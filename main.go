@@ -1,9 +1,5 @@
 package main
 
-import (
-	"fmt"
-)
-
 // 多參數回傳 -------------------------------------------------------------------
 // func sap(x int, y int) (xpy int, xty int) {
 // 	return x + y, x * y
@@ -133,40 +129,71 @@ import (
 
 // struct ----------------------------------------
 
-type Person struct {
-	Name string
-	Age  int
-}
+// type Person struct {
+// 	Name string
+// 	Age  int
+// }
 
-func olderPerson(p1, p2 Person) (Person, int) {
-	if p1.Age > p2.Age {
-		return p1, p1.Age - p2.Age
-	}
-	return p2, p2.Age - p1.Age
-}
+// func olderPerson(p1, p2 Person) (Person, int) {
+// 	if p1.Age > p2.Age {
+// 		return p1, p1.Age - p2.Age
+// 	}
+// 	return p2, p2.Age - p1.Age
+// }
 
-func main() {
-	// 賦值初始化
-	var tom Person = Person{
-		Name: "Tom",
-		Age:  18,
-	}
-	// 兩個欄位都寫清楚的初始化
-	jack := Person{
-		Name: "Jack",
-		Age:  20,
-	}
-	// 按照 struct 定義順序初始化值
-	tina := Person{"tina", 21}
-	// 指標初始化
-	// var lisa *Person = &Person{
-	// 	Name: "Lisa",
-	// 	Age:  19,
-	// }
+// func main() {
+// 	// 賦值初始化
+// 	var tom Person = Person{
+// 		Name: "Tom",
+// 		Age:  18,
+// 	}
+// 	// 兩個欄位都寫清楚的初始化
+// 	jack := Person{
+// 		Name: "Jack",
+// 		Age:  20,
+// 	}
+// 	// 按照 struct 定義順序初始化值
+// 	tina := Person{"tina", 21}
+// 	// 指標初始化
+// 	// var lisa *Person = &Person{
+// 	// 	Name: "Lisa",
+// 	// 	Age:  19,
+// 	// }
 
-	tj, difftj := olderPerson(tom, jack)
-	jt, diffjt := olderPerson(jack, tina)
+// 	tj, difftj := olderPerson(tom, jack)
+// 	jt, diffjt := olderPerson(jack, tina)
 
-	fmt.Printf("%v is older %v years\n", tj.Name, difftj)
-	fmt.Printf("%v is older %v years\n", jt.Name, diffjt)
-}
+// 	fmt.Printf("%v is older %v years\n", tj.Name, difftj)
+// 	fmt.Printf("%v is older %v years\n", jt.Name, diffjt)
+// }
+
+// type Human struct {
+// 	name   string
+// 	age    int
+// 	weight int
+// }
+
+// type Student struct {
+// 	Human      // 匿名欄位，那麼預設 Student 就包含了 Human 的所有欄位
+// 	speciality string
+// }
+
+// func main() {
+// 	// aa := Student{
+// 	// 	Human{"Mark", 25, 120},
+// 	// 	"Computer Science",
+// 	// }
+
+// 	mark := Student{
+// 		Human{"mark", 18, 60},
+// 		"Computer Science",
+// 	}
+
+// 	fmt.Println("His name is ", mark.name)
+// 	fmt.Println("His age is ", mark.age)
+// 	fmt.Println("His weight is ", mark.weight)
+// 	fmt.Println("His speciality is ", mark.speciality)
+
+// 	mark.speciality = "Math"
+// 	fmt.Println("His new speciality is ", mark.speciality)
+// }
