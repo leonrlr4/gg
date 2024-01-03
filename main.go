@@ -197,3 +197,75 @@ package main
 // 	mark.speciality = "Math"
 // 	fmt.Println("His new speciality is ", mark.speciality)
 // }
+
+// type Skills []string
+
+// type Human struct {
+// 	name   string
+// 	age    int
+// 	weight int
+// }
+
+// type Job struct {
+// 	title    string
+// 	timeYear int
+// }
+
+// type Student struct {
+// 	Human // 匿名欄位，struct
+// 	Job
+// 	Skills     // 匿名欄位，自訂的型別 string slice
+// 	int        // 內建型別作為匿名欄位
+// 	speciality string
+// }
+
+// func main() {
+// 	// 初始化學生 Jane
+// 	jane := Student{
+// 		Human:      Human{"Jane", 35, 100},
+// 		Job:        Job{"Cooking", 2},
+// 		speciality: "Biology",
+// 	}
+// 	// 現在我們來存取相應的欄位
+// 	fmt.Println("Her name is ", jane.name)
+// 	fmt.Println("Her age is ", jane.age)
+// 	fmt.Println("Her weight is ", jane.weight)
+// 	fmt.Println("Her speciality is ", jane.speciality)
+// 	fmt.Println("Her job is ", jane.Job.title)
+// 	fmt.Println("She is doing for ", jane.Job.timeYear, " years")
+
+// 	// 我們來修改他的 skill 技能欄位
+// 	jane.Skills = []string{"anatomy"}
+// 	fmt.Println("Her skills are ", jane.Skills)
+// 	fmt.Println("She acquired two new ones ")
+// 	jane.Skills = append(jane.Skills, "physics", "golang")
+// 	fmt.Println("Her skills now are ", jane.Skills)
+
+// 	// 修改匿名內建型別欄位
+// 	jane.int = 3
+// 	fmt.Println("Her preferred number is", jane.int)
+// }
+
+// type Human struct {
+// 	name  string
+// 	Age   int
+// 	phone string
+// }
+
+// type employee struct {
+// 	Human
+// 	speciality string
+// 	phone      string
+// }
+
+// func main() {
+// 	Bob := employee{
+// 		Human{"Bob", 34, "123456"},
+// 		"IT",
+// 		"654321",
+// 	}
+// 	fmt.Println("Bob's work phone is:", Bob.phone)
+// 	fmt.Println("Bob's personal phone is:", Bob.Human.phone)
+// }
+
+// OOP ----------------------------------------
